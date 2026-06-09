@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guendhelyn Faith S. Avenido | Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #f5f8fc;
+            --white: #ffffff;
+            --border: #d8e4f0;
+            --accent: #3d6fa5;
+            --accent2: #5e93c8;
+            --accent3: #8ab4d4;
+            --accent-dark: #284d78;
+            --text: #18293d;
+            --muted: #6080a0;
+            --light: #eaf1f9;
+            --radius: 14px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Jost', sans-serif;
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            height: 68px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--accent-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 38px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.76rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* ── HERO ── */
+        #hero {
+            display: grid;
+            grid-template-columns: 48% 52%;
+            min-height: 100vh;
+            padding-top: 68px;
+        }
+
+        .hero-photo-col {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-photo-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .hero-photo-col::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, transparent 50%, rgba(245, 248, 252, 0.65) 80%, #f5f8fc 100%);
+            pointer-events: none;
+        }
+
+        .hero-photo-fallback {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(160deg, var(--light) 0%, #c9dff0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 6rem;
+            font-weight: 300;
+            color: var(--accent2);
+        }
+
+        .hero-text-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 72px 80px 52px;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .hero-greeting {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .hero-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+            font-weight: 600;
+            line-height: 1.05;
+            color: var(--text);
+            margin-bottom: 26px;
+        }
+
+        .hero-name em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-divider {
+            width: 44px;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent), var(--accent3));
+            border-radius: 2px;
+            margin-bottom: 24px;
+        }
+
+        .hero-roles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 26px;
+        }
+
+        .role-pill {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .hero-bio {
+            font-size: 0.93rem;
+            color: var(--muted);
+            max-width: 430px;
+            margin-bottom: 40px;
+            line-height: 1.85;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-dark);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            padding: 11px 26px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            background: transparent;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--light);
+            transform: translateY(-2px);
+        }
+
+        .hero-contact-strip {
+            margin-top: 40px;
+            padding-top: 26px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.73rem;
+            color: var(--muted);
+        }
+
+        .contact-item svg {
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* ── SECTIONS ── */
+        .section-wrap {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 92px 60px;
+        }
+
+        .full-alt {
+            background: #edf3fb;
+        }
+
+        .section-label {
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 22px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.9rem, 3vw, 2.7rem);
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 48px;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .sub-heading {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+            margin-top: 50px;
+        }
+
+        .sub-heading:first-child {
+            margin-top: 0;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border), transparent);
+            margin: 0 60px;
+        }
+
+        /* ── ABOUT ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.63rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .info-item span {
+            font-size: 0.88rem;
+            font-weight: 400;
+            color: var(--text);
+        }
+
+        /* ── SKILLS ── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 13px;
+        }
+
+        .skill-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            transition: border-color 0.22s, transform 0.22s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .skill-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .skill-name {
+            font-size: 0.83rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: var(--text);
+        }
+
+        /* ── TIMELINE ── */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--accent2), var(--border));
+        }
+
+        .exp-item {
+            position: relative;
+            padding-left: 58px;
+            margin-bottom: 34px;
+        }
+
+        .exp-dot {
+            position: absolute;
+            left: 12px;
+            top: 22px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg);
+            outline: 1px solid var(--accent);
+        }
+
+        .exp-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            transition: border-color 0.22s;
+        }
+
+        .exp-card:hover {
+            border-color: var(--accent);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.12rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .exp-period {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 3px 11px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .exp-company {
+            font-size: 0.78rem;
+            color: var(--accent2);
+            margin-bottom: 10px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        .exp-company a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .exp-company a:hover {
+            text-decoration: underline;
+        }
+
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 2px 9px;
+            font-size: 0.66rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        /* ── EDUCATION ── */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .edu-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--accent2);
+            border-radius: var(--radius);
+            padding: 26px;
+            transition: transform 0.22s;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .edu-level {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 9px;
+        }
+
+        .edu-school {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .edu-course {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 9px;
+            font-weight: 300;
+        }
+
+        .edu-year {
+            font-size: 0.7rem;
+            color: var(--accent2);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        /* ────────────────────────────────
+           CERTIFICATE CARDS
+        ──────────────────────────────── */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Text-only cert (Advanced Seminar) */
+        .cert-text-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            transition: border-color 0.22s, transform 0.22s;
+        }
+
+        .cert-text-card:hover {
+            border-color: var(--accent3);
+            transform: translateY(-3px);
+        }
+
+        .cert-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cert-title {
+            font-size: 0.83rem;
+            font-weight: 500;
+            line-height: 1.45;
+            color: var(--text);
+        }
+
+        .cert-date {
+            font-size: 0.68rem;
+            color: var(--muted);
+            margin-top: 5px;
+            font-weight: 300;
+        }
+
+        /* Visual certificate placeholder card */
+        .cert-placeholder-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.22s, box-shadow 0.22s;
+        }
+
+        .cert-placeholder-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(61, 111, 165, 0.14);
+        }
+
+        /* ── DYNAMIC IMAGE AREA (cert) ──
+           • With image  → height is natural (portrait or landscape respected)
+           • Without image → fixed fallback height with placeholder decorations
+        ── */
+        .cert-img-area {
+            position: relative;
+            background: linear-gradient(135deg, #ddeaf8 0%, #eef5fc 50%, #d4e6f5 100%);
+            overflow: hidden;
+        }
+
+        /* Fallback state: no <img> present → fixed height + flex centering */
+        .cert-img-area:not(:has(img)) {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Decorative corner ornaments — hidden when real image present */
+        .cert-img-area::before,
+        .cert-img-area::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(61, 111, 165, 0.22);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .cert-img-area::before {
+            top: 10px;
+            left: 10px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .cert-img-area::after {
+            bottom: 10px;
+            right: 10px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .cert-img-area:has(img)::before,
+        .cert-img-area:has(img)::after {
+            display: none;
+        }
+
+        /* Inner double border frame */
+        .cert-frame {
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(61, 111, 165, 0.18);
+            border-radius: 4px;
+        }
+
+        .cert-frame::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border: 1px dashed rgba(61, 111, 165, 0.14);
+            border-radius: 2px;
+        }
+
+        /* Ribbon banner */
+        .cert-ribbon {
+            position: absolute;
+            top: 14px;
+            left: -28px;
+            width: 130px;
+            background: var(--accent);
+            color: #fff;
+            text-align: center;
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 5px 0;
+            transform: rotate(-38deg);
+            opacity: 0.9;
+        }
+
+        /* Seal */
+        .cert-seal {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 3px solid rgba(61, 111, 165, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .cert-seal::before {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border-radius: 50%;
+            border: 1px solid rgba(61, 111, 165, 0.25);
+        }
+
+        .cert-seal-icon {
+            font-size: 1.4rem;
+        }
+
+        .cert-placeholder-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .cert-placeholder-sub {
+            font-size: 0.6rem;
+            color: var(--muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: 2px;
+            text-align: center;
+        }
+
+        /* ── THE KEY RULE: image flows at its natural size (portrait = tall, landscape = short) ── */
+        .cert-img-area img {
+            width: 100%;
+            height: auto;
+            /* ← natural aspect ratio preserved */
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hide fallback decorations when real image is in the DOM */
+        .cert-img-area img~* {
+            display: none;
+        }
+
+        /* Card bottom info */
+        .cert-info {
+            padding: 16px 18px 18px;
+            border-top: 1px solid var(--border);
+        }
+
+        .cert-info-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .cert-info-sub {
+            font-size: 0.69rem;
+            color: var(--muted);
+            font-weight: 300;
+        }
+
+        /* ────────────────────────────────
+           TRAINING BADGE CARDS
+        ──────────────────────────────── */
+        .trainings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        /* Text-only training (Advanced Seminar) */
+        .training-text-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            transition: border-color 0.2s;
+        }
+
+        .training-text-item:hover {
+            border-color: var(--accent);
+        }
+
+        .training-bullet {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .training-text {
+            font-size: 0.82rem;
+            color: var(--muted);
+            flex: 1;
+            font-weight: 300;
+        }
+
+        .training-date {
+            font-size: 0.68rem;
+            color: var(--accent);
+            white-space: nowrap;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+        }
+
+        /* Badge card */
+        .training-badge-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.22s, box-shadow 0.22s;
+        }
+
+        .training-badge-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(61, 111, 165, 0.13);
+        }
+
+        /* ── DYNAMIC IMAGE AREA (badge) ── */
+        .badge-img-area {
+            position: relative;
+            background: linear-gradient(135deg, #e4eef8 0%, #f0f6fc 60%, #dde9f5 100%);
+            overflow: hidden;
+        }
+
+        /* Fallback state: no <img> → fixed height + flex centering */
+        .badge-img-area:not(:has(img)) {
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* Hexagon accent — hidden when real image present */
+        .badge-img-area::before {
+            content: '';
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            background: rgba(61, 111, 165, 0.06);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .badge-img-area:has(img)::before {
+            display: none;
+        }
+
+        .badge-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 14px rgba(61, 111, 165, 0.3);
+        }
+
+        .badge-label {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── THE KEY RULE: image flows at its natural size ── */
+        .badge-img-area img {
+            width: 100%;
+            height: auto;
+            /* ← natural aspect ratio preserved */
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hide fallback decorations when real image is in the DOM */
+        .badge-img-area img~* {
+            display: none;
+        }
+
+        /* ── LANDSCAPE: uniform fixed height, image crops to fill ── */
+        .badge-img-area.landscape {
+            height: 200px;
+        }
+
+        .badge-img-area.landscape img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            inset: 0;
+        }
+
+        /* restore absolute positioning context for landscape */
+        .badge-img-area.landscape {
+            position: relative;
+        }
+
+        /* ── PORTRAIT: flows at natural height ── */
+        .badge-img-area.portrait img {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+        }
+
+        /* Orient sub-label inside the trainings grid */
+        .orient-label {
+            grid-column: 1 / -1;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding: 4px 0 2px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2px;
+        }
+
+        .badge-info {
+            padding: 14px 16px 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .badge-info-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.4;
+            margin-bottom: 3px;
+        }
+
+        .badge-info-org {
+            font-size: 0.66rem;
+            color: var(--muted);
+            font-weight: 300;
+        }
+
+        /* ── REFERENCES ── */
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+            gap: 16px;
+        }
+
+        .ref-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: border-color 0.22s, transform 0.22s;
+        }
+
+        .ref-card:hover {
+            border-color: var(--accent2);
+            transform: translateY(-3px);
+        }
+
+        .ref-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent2), var(--accent-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 13px;
+        }
+
+        .ref-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.07rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .ref-role {
+            font-size: 0.76rem;
+            color: var(--muted);
+            margin-bottom: 13px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .ref-contact {
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--accent-dark);
+            color: rgba(255, 255, 255, 0.75);
+            padding: 42px 60px;
+            text-align: center;
+        }
+
+        .footer-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.05em;
+            margin-bottom: 9px;
+        }
+
+        footer p {
+            font-size: 0.78rem;
+            letter-spacing: 0.06em;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            nav {
+                padding: 0 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            #hero {
+                grid-template-columns: 1fr;
+                grid-template-rows: 60vw auto;
+            }
+
+            .hero-photo-col::after {
+                background: linear-gradient(to bottom, transparent 60%, var(--bg) 100%);
+            }
+
+            .hero-text-col {
+                padding: 44px 28px;
+            }
+
+            .section-wrap {
+                padding: 68px 28px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .divider {
+                margin: 0 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">Guendhelyn Faith S. Avenido</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certs">Certificates</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-photo-col">
+            <img src="profile.png" alt="Guendhelyn Faith S. Avenido"
+                onerror="this.parentElement.innerHTML='<div class=\'hero-photo-fallback\'>G</div>';" />
+        </div>
+        <div class="hero-text-col">
+            <div class="hero-eyebrow">IT Professional &amp; Innovator</div>
+            <p class="hero-greeting">Hello, my name is</p>
+            <h1 class="hero-name">Guendhelyn<br>Faith <em>S. Avenido</em></h1>
+            <div class="hero-divider"></div>
+            <div class="hero-roles">
+                <span class="role-pill">Full Stack Developer</span>
+                <span class="role-pill">UI / UX Designer</span>
+                <span class="role-pill">Project Manager</span>
+                <span class="role-pill">QA Officer</span>
+                <span class="role-pill">Virtual Assistant</span>
+            </div>
+            <p class="hero-bio">A dedicated Information Technology professional with proven experience in full-stack
+                development, quality assurance, graphic design, and strategic project management — driven by a passion
+                for building elegant, purposeful digital experiences.</p>
+            <div class="hero-cta">
+                <a href="mailto:guenavenidolp@gmail.com" class="btn-primary">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                    Contact Me
+                </a>
+                <a href="https://www.linkedin.com/in/guendhelyn-faith-avenido/" target="_blank" class="btn-outline">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+            <div class="hero-contact-strip">
+                <div class="contact-item">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.93.333 1.854.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    09514094739
+                </div>
+                <div class="contact-item">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                    guenavenidolp@gmail.com
+                </div>
+                <div class="contact-item">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    Carmen, Davao del Norte
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ABOUT -->
+    <div id="about">
+        <div class="section-wrap">
+            <div class="section-label">Who I Am</div>
+            <h2 class="section-title">Personal <em>Information</em></h2>
+            <div class="about-grid">
+                <div class="info-card">
+                    <div class="info-grid">
+                        <div class="info-item"><label>Age</label><span>21 years old</span></div>
+                        <div class="info-item"><label>Date of Birth</label><span>March 10, 2005</span></div>
+                        <div class="info-item"><label>Place of Birth</label><span>Davao, Davao del Sur</span></div>
+                        <div class="info-item"><label>Civil Status</label><span>Single</span></div>
+                        <div class="info-item"><label>Email</label><span
+                                style="font-size:.77rem">guenavenidolp@gmail.com</span></div>
+                        <div class="info-item"><label>Phone</label><span>09514094739</span></div>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-item" style="margin-bottom:20px"><label>Address</label><span>Purok 3 Wearbempco
+                            Village, Brgy. Minda, Carmen, Davao del Norte</span></div>
+                    <div class="info-item" style="margin-bottom:20px"><label>LinkedIn</label><span><a
+                                href="https://www.linkedin.com/in/guendhelynfaith-avenido-4b444a3a7/" target="_blank"
+                                style="color:var(--accent);text-decoration:none;font-size:.8rem">linkedin.com/in/guendhelynfaith-avenido</a></span>
+                    </div>
+                    <div class="info-item"><label>Current Role</label><span>Project Manager — 9:24 Group</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SKILLS -->
+    <div class="full-alt" id="skills">
+        <div class="section-wrap">
+            <div class="section-label">Expertise</div>
+            <h2 class="section-title">Skills &amp; <em>Capabilities</em></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <div class="skill-name">Graphic Design</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <div class="skill-name">Front End Development</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🖥️</div>
+                    <div class="skill-name">Full Stack Development</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">✏️</div>
+                    <div class="skill-name">UI &amp; UX Design</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📣</div>
+                    <div class="skill-name">Marketing</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <div class="skill-name">Programming</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📋</div>
+                    <div class="skill-name">Note Taking</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🗂️</div>
+                    <div class="skill-name">Project Management</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <div class="skill-name">Virtual Assistant</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <div class="skill-name">CRM &amp; GHL</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔍</div>
+                    <div class="skill-name">Quality Assurance</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🛡️</div>
+                    <div class="skill-name">Lead Internal Auditor</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- EXPERIENCE -->
+    <div id="experience">
+        <div class="section-wrap">
+            <div class="section-label">Career</div>
+            <h2 class="section-title">Work <em>Experience</em></h2>
+            <div class="timeline">
+                <div class="exp-item">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div class="exp-role">Project Manager</div>
+                            <div class="exp-period">Jan 2026 – April 2026</div>
+                        </div>
+                        <div class="exp-company"><a href="https://924group.com/" target="_blank">9:24 Group ·
+                                924group.com</a></div>
+                        <div class="exp-tags"><span class="tag">Project Management</span><span
+                                class="tag">QMS</span><span class="tag">ISMS Documentation</span><span class="tag">Lead
+                                Internal Auditor</span></div>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div class="exp-role">Junior Web Developer &amp; QA Officer</div>
+                            <div class="exp-period">February 2026 - Present</div>
+                        </div>
+                        <div class="exp-company">Surepay Technologies Inc.</div>
+                        <div class="exp-tags"><span class="tag">Web Development</span><span class="tag">Quality
+                                Assurance</span><span class="tag">QMS</span></div>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div class="exp-role">Virtual Assistant</div>
+                            <div class="exp-period">May – Nov 2025</div>
+                        </div>
+                        <div class="exp-company">OTB</div>
+                        <div class="exp-tags"><span class="tag">Virtual Assistance</span><span
+                                class="tag">Administrative Support</span></div>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div class="exp-role">Full Stack Developer · Note Taker · Project Manager</div>
+                            <div class="exp-period">2023 – 2025</div>
+                        </div>
+                        <div class="exp-company">Dev Codic</div>
+                        <div class="exp-tags"><span class="tag">Vue.js</span><span class="tag">Nuxt</span><span
+                                class="tag">Laravel</span><span class="tag">Jira</span><span
+                                class="tag">monday.com</span><span class="tag">Slack</span><span
+                                class="tag">Trello</span></div>
+                    </div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <div class="exp-role">Customer Service · Marketing · Graphic Designer</div>
+                            <div class="exp-period">2020 – 2023</div>
+                        </div>
+                        <div class="exp-company">Glence Advertising</div>
+                        <div class="exp-tags"><span class="tag">Customer Service</span><span
+                                class="tag">Marketing</span><span class="tag">Graphic Design</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- EDUCATION -->
+    <div class="full-alt" id="education">
+        <div class="section-wrap">
+            <div class="section-label">Academic Background</div>
+            <h2 class="section-title">Education &amp; <em>Training</em></h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-level">Tertiary</div>
+                    <div class="edu-school">Davao del Norte State College</div>
+                    <div class="edu-course">Bachelor of Science in Information Technology</div>
+                    <div class="edu-year">August 2022 – Present</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-level">Senior High School</div>
+                    <div class="edu-school">Antonio O. Floirendo National High School</div>
+                    <div class="edu-course">Senior High School</div>
+                    <div class="edu-year">2020 – 2022</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-level">Junior High School</div>
+                    <div class="edu-school">Antonio O. Floirendo National High School</div>
+                    <div class="edu-course">Junior High School</div>
+                    <div class="edu-year">2016 – 2020</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-level">Primary</div>
+                    <div class="edu-school">Minda Elementary School</div>
+                    <div class="edu-course">Primary Education</div>
+                    <div class="edu-year">2015 – 2016</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CERTIFICATES & TRAININGS -->
+    <div id="certs">
+        <div class="section-wrap">
+            <div class="section-label">Achievements</div>
+            <h2 class="section-title">Certificates &amp; <em>Seminars</em></h2>
+
+            <!-- CERTIFICATES -->
+            <div class="sub-heading">Certificates</div>
+            <div class="certs-grid">
+
+                <!-- SCRUM — WITH IMAGE (portrait or landscape auto-adapts) -->
+                <div class="cert-placeholder-card">
+                    <div class="cert-img-area">
+                        <img src="[FLEXIDEV] SCRUM CERTIFICATES - Copy_page-0001.jpg"
+                            alt="SCRUM Methodology Specialist Certificate" onerror="this.remove();" />
+                        <!-- fallback shown only when image is absent/removed -->
+                        <div class="cert-frame"></div>
+                        <div class="cert-ribbon">Certificate</div>
+                        <div class="cert-seal"><span class="cert-seal-icon">🏅</span></div>
+                        <div class="cert-placeholder-label">Scrum Methodology</div>
+                        <div class="cert-placeholder-sub">Specialist Certificate</div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-info-title">SCRUM Methodology Specialist</div>
+                        <div class="cert-info-sub">Agile Project Management</div>
+                    </div>
+                </div>
+
+                <!-- Business System Analysis — WITH IMAGE -->
+                <div class="cert-placeholder-card">
+                    <div class="cert-img-area">
+                        <img src="[FLEXIDEV] SYSTEM ANALYST CERTIFICATES - Copy_page-0001.jpg"
+                            alt="Business System Analysis Specialist Certificate" onerror="this.remove();" />
+                        <div class="cert-frame"></div>
+                        <div class="cert-ribbon">Certificate</div>
+                        <div class="cert-seal"><span class="cert-seal-icon">📊</span></div>
+                        <div class="cert-placeholder-label">Business System Analysis</div>
+                        <div class="cert-placeholder-sub">Specialist Certificate</div>
+                    </div>
+                    <div class="cert-info">
+                        <div class="cert-info-title">Business System Analysis Specialist</div>
+                        <div class="cert-info-sub">Business Analysis</div>
+                    </div>
+                </div>
+
+            </div><!-- /certs-grid -->
+
+            <!-- TRAININGS & SEMINARS -->
+            <div class="sub-heading">Trainings &amp; Seminars</div>
+            <div class="trainings-grid">
+
+                <!-- ── LANDSCAPE GROUP ── -->
+                <div class="orient-label">Landscape</div>
+
+                <div class="training-badge-card">
+                    <div class="badge-img-area landscape">
+                        <img src="Training Certificate CD ISO 9001_2026  QMS Course - Guendhelyn Faith S. Avenido_page-0001 (1).jpg"
+                            alt="DIS ISO 9001:2026 QMS" onerror="this.remove();" />
+                        <div class="badge-icon-wrap">⭐</div>
+                        <div class="badge-label">ISO Certificate</div>
+                    </div>
+                    <div class="badge-info">
+                        <div class="badge-info-title">DIS ISO 9001:2026 Quality Management System</div>
+                        <div class="badge-info-org">ISO Certification Course</div>
+                    </div>
+                </div>
+
+                <div class="training-badge-card">
+                    <div class="badge-img-area landscape">
+                        <img src="Training Certificate Ethical Leadership Course -  Guendhelyn Faith S. Avenido_page-0001.jpg"
+                            alt="Ethical Leadership" onerror="this.remove();" />
+                        <div class="badge-icon-wrap">🌿</div>
+                        <div class="badge-label">Leadership</div>
+                    </div>
+                    <div class="badge-info">
+                        <div class="badge-info-title">Ethical Leadership</div>
+                        <div class="badge-info-org">Leadership Development</div>
+                    </div>
+                </div>
+
+                <div class="training-badge-card">
+                    <div class="badge-img-area landscape">
+                        <img src="Training Certificate ISO 27701 ISMS Course -  Guendhelyn Faith S. Avenido_page-0001.jpg"
+                            alt="ISO 27001:2022 ISMS" onerror="this.remove();" />
+                        <div class="badge-icon-wrap">🔒</div>
+                        <div class="badge-label">ISO Certificate</div>
+                    </div>
+                    <div class="badge-info">
+                        <div class="badge-info-title">ISO 27001:2022 Information Security Management System</div>
+                        <div class="badge-info-org">ISO Certification Course</div>
+                    </div>
+                </div>
+
+                <div class="training-badge-card">
+                    <div class="badge-img-area landscape">
+                        <img src="Training Certificate ISO 27701 PIMS Course - Guendhelyn Faith S. Avenido_page-0001.jpg"
+                            alt="ISO/IEC 27701:2019 PIMS" onerror="this.remove();" />
+                        <div class="badge-icon-wrap">🛡️</div>
+                        <div class="badge-label">ISO Certificate</div>
+                    </div>
+                    <div class="badge-info">
+                        <div class="badge-info-title">ISO/IEC 27701:2019 Privacy Information Management System</div>
+                        <div class="badge-info-org">ISO Certification Course</div>
+                    </div>
+                </div>
+
+                <!-- ── PORTRAIT GROUP ── -->
+                <div class="orient-label">Portrait</div>
+
+                <div class="training-badge-card">
+                    <div class="badge-img-area portrait">
+                        <img src="Project-Management_Guendhelyn-Faith-S- Avenido_6185_page-0001.jpg"
+                            alt="Project Management Training" onerror="this.remove();" />
+                        <div class="badge-icon-wrap">🗂️</div>
+                        <div class="badge-label">Training Badge</div>
+                    </div>
+                    <div class="badge-info">
+                        <div class="badge-info-title">Project Management Training</div>
+                        <div class="badge-info-org">Professional Development</div>
+                    </div>
+                </div>
+
+                <div class="training-badge-card">
+                    <div class="badge-img-area portrait">
+                        <img src="ISO 9001_2015 QMS AWARENESS_page-0001.jpg" alt="ISO 9001:2015 QMS Awareness"
+                            onerror="this.remove();" />
+                        <div class="badge-icon-wrap">✅</div>
+                        <div class="badge-label">ISO Certificate</div>
+                    </div>
+                    <div class="badge-info">
+                        <div class="badge-info-title">ISO 9001:2015 QMS Awareness</div>
+                        <div class="badge-info-org">ISO Certification Course</div>
+                    </div>
+                </div>
+
+                <div class="training-badge-card">
+                    <div class="badge-img-area portrait">
+                        <img src="SETTING OF QUALITY OBJECTIVES WORKSHOP_page-0001.jpg"
+                            alt="Setting of Quality Objectives Workshop" onerror="this.remove();" />
+                        <div class="badge-icon-wrap">🎯</div>
+                        <div class="badge-label">Workshop</div>
+                    </div>
+                    <div class="badge-info">
+                        <div class="badge-info-title">Setting of Quality Objectives Workshop</div>
+                        <div class="badge-info-org">Quality Management</div>
+                    </div>
+                </div>
+
+                <div class="training-badge-card">
+                    <div class="badge-img-area portrait">
+                        <img src="SWOT AND STAKEHOLDERS ANALYSIS WORKSHOP_page-0001.jpg"
+                            alt="SWOT and Stakeholder's Analysis Workshop" onerror="this.remove();" />
+                        <div class="badge-icon-wrap">📈</div>
+                        <div class="badge-label">Workshop</div>
+                    </div>
+                    <div class="badge-info">
+                        <div class="badge-info-title">SWOT and Stakeholder's Analysis Workshop</div>
+                        <div class="badge-info-org">Strategic Analysis</div>
+                    </div>
+                </div>
+
+            </div><!-- /trainings-grid -->
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- REFERENCES -->
+    <div class="full-alt" id="references">
+        <div class="section-wrap">
+            <div class="section-label">Vouched By</div>
+            <h2 class="section-title">Character <em>References</em></h2>
+            <div class="ref-grid">
+                <div class="ref-card">
+                    <div class="ref-avatar">FC</div>
+                    <div class="ref-name">Florence Comajes</div>
+                    <div class="ref-role">Owner, Glence Advertising · Freelance Senior Web Developer</div>
+                    <div class="ref-contact">0976-179-1910</div>
+                </div>
+                <div class="ref-card">
+                    <div class="ref-avatar">MB</div>
+                    <div class="ref-name">Dr. Mark Van Buladaco, DBMIS</div>
+                    <div class="ref-role">Dean of the Institute of Computing at Davao del Norte State College</div>
+                    <div class="ref-contact">New Visayas, Panabo City, Davao del Norte</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-name">Guendhelyn Faith S. Avenido</div>
+        <p>guenavenidolp@gmail.com &nbsp;·&nbsp; 09514094739 &nbsp;·&nbsp; Carmen, Davao del Norte</p>
+    </footer>
+
+</body>
+
+</html>
