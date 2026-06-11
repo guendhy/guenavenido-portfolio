@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guendhelyn Faith S. Avenido | Portfolio</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
         rel="stylesheet" />
     <style>
         *,
@@ -18,16 +18,16 @@
         }
 
         :root {
-            --bg: #f5f8fc;
-            --white: #ffffff;
-            --border: #d8e4f0;
-            --accent: #3d6fa5;
-            --accent2: #5e93c8;
-            --accent3: #8ab4d4;
-            --accent-dark: #284d78;
-            --text: #18293d;
-            --muted: #6080a0;
-            --light: #eaf1f9;
+            --bg: #e4ecf5;
+            --white: #f2f7fc;
+            --border: #b8ccde;
+            --accent: #2a5c92;
+            --accent2: #3f7ab5;
+            --accent3: #6597bc;
+            --accent-dark: #172f52;
+            --text: #0d1b2b;
+            --muted: #45617d;
+            --light: #ccd9ea;
             --radius: 14px;
         }
 
@@ -95,7 +95,7 @@
         }
 
         .nav-logo {
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.2rem;
             font-weight: 600;
             letter-spacing: 0.03em;
@@ -193,7 +193,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 6rem;
             font-weight: 400;
             color: var(--accent2);
@@ -392,7 +392,7 @@
         }
 
         .hero-greeting {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 1.1rem;
             font-weight: 400;
             font-style: italic;
@@ -401,7 +401,7 @@
         }
 
         .hero-name {
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(2.8rem, 4.5vw, 4.4rem);
             font-weight: 700;
             line-height: 1.05;
@@ -634,7 +634,7 @@
         }
 
         .full-alt {
-            background: #edf3fb;
+            background: #d6e2ef;
         }
 
         .section-label {
@@ -658,7 +658,7 @@
         }
 
         .section-title {
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(1.9rem, 3vw, 2.8rem);
             font-weight: 700;
             line-height: 1.12;
@@ -854,7 +854,7 @@
         }
 
         .exp-role {
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--text);
@@ -946,7 +946,7 @@
         }
 
         .edu-school {
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1rem;
             font-weight: 600;
             color: var(--text);
@@ -1132,7 +1132,7 @@
         }
 
         .cert-placeholder-label {
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 0.75rem;
             font-weight: 600;
             color: var(--accent-dark);
@@ -1389,7 +1389,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.05rem;
             font-weight: 600;
             color: #fff;
@@ -1397,7 +1397,7 @@
         }
 
         .ref-name {
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.05rem;
             font-weight: 600;
             color: var(--text);
@@ -1428,7 +1428,6 @@
             overflow: hidden;
         }
 
-        /* Glowing orb backdrop */
         footer::before {
             content: '';
             position: absolute;
@@ -1437,40 +1436,23 @@
             transform: translateX(-50%);
             width: 480px;
             height: 480px;
-            background: radial-gradient(circle, rgba(94, 147, 200, 0.14), transparent 65%);
+            background: radial-gradient(circle, rgba(63, 122, 181, 0.18), transparent 65%);
             pointer-events: none;
-            animation: footerPulse 6s ease-in-out infinite;
+            animation: footerPulse 7s ease-in-out infinite;
         }
 
         @keyframes footerPulse {
 
             0%,
             100% {
-                transform: translateX(-50%) scale(1);
                 opacity: 1;
+                transform: translateX(-50%) scale(1);
             }
 
             50% {
-                transform: translateX(-50%) scale(1.12);
-                opacity: 0.7;
+                opacity: 0.6;
+                transform: translateX(-50%) scale(1.15);
             }
-        }
-
-        /* Decorative top line */
-        footer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.35), transparent);
-            transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        footer.footer-visible::after {
-            width: 80%;
         }
 
         .footer-inner {
@@ -1484,14 +1466,6 @@
             justify-content: center;
             gap: 16px;
             margin-bottom: 24px;
-            opacity: 0;
-            transform: scaleX(0.4);
-            transition: opacity 0.8s ease 0.2s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
-        }
-
-        footer.footer-visible .footer-ornament {
-            opacity: 1;
-            transform: scaleX(1);
         }
 
         .footer-ornament-line {
@@ -1509,44 +1483,25 @@
             width: 5px;
             height: 5px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.35);
         }
 
         .footer-name {
-            font-family: 'Fraunces', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.8rem;
-            font-weight: 500;
-            font-style: italic;
+            font-weight: 600;
             color: #fff;
-            letter-spacing: 0.01em;
-            margin-bottom: 12px;
-            position: relative;
-            opacity: 0;
-            transform: translateY(18px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
-        }
-
-        footer.footer-visible .footer-name {
-            opacity: 1;
-            transform: translateY(0);
+            letter-spacing: -0.01em;
+            margin-bottom: 10px;
         }
 
         .footer-tagline {
-            font-size: 0.66rem;
+            font-size: 0.64rem;
             font-weight: 500;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.38);
             margin-bottom: 28px;
-            opacity: 0;
-            transform: translateY(12px);
-            transition: opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s;
-        }
-
-        footer.footer-visible .footer-tagline {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .footer-contacts {
@@ -1555,14 +1510,6 @@
             gap: 28px;
             flex-wrap: wrap;
             margin-bottom: 36px;
-            opacity: 0;
-            transform: translateY(14px);
-            transition: opacity 0.7s ease 0.6s, transform 0.7s ease 0.6s;
-        }
-
-        footer.footer-visible .footer-contacts {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .footer-contact-item {
@@ -1570,7 +1517,7 @@
             align-items: center;
             gap: 7px;
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.55);
+            color: rgba(255, 255, 255, 0.52);
             transition: color 0.22s;
         }
 
@@ -1584,27 +1531,16 @@
         }
 
         .footer-divider {
-            width: 0;
+            width: 160px;
             height: 1px;
             background: rgba(255, 255, 255, 0.1);
             margin: 0 auto 20px;
-            transition: width 1s ease 0.7s;
         }
 
-        footer.footer-visible .footer-divider {
-            width: 200px;
-        }
-
-        footer .footer-copy {
-            font-size: 0.68rem;
-            letter-spacing: 0.09em;
-            color: rgba(255, 255, 255, 0.28);
-            opacity: 0;
-            transition: opacity 0.6s ease 0.85s;
-        }
-
-        footer.footer-visible .footer-copy {
-            opacity: 1;
+        .footer-copy {
+            font-size: 0.67rem;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.25);
         }
 
         /* ── RESPONSIVE ── */
@@ -2169,16 +2105,16 @@
     <!-- FOOTER -->
     <footer id="mainFooter">
         <div class="footer-inner">
-            <div class="footer-ornament">
+            <div class="footer-ornament" data-animate>
                 <span class="footer-ornament-line"></span>
                 <span class="footer-ornament-dot"></span>
                 <span class="footer-ornament-dot"></span>
                 <span class="footer-ornament-dot"></span>
                 <span class="footer-ornament-line"></span>
             </div>
-            <div class="footer-name">Guendhelyn Faith S. Avenido</div>
-            <div class="footer-tagline">IT Professional &amp; Innovator</div>
-            <div class="footer-contacts">
+            <div class="footer-name" data-animate data-delay="1">Guendhelyn Faith S. Avenido</div>
+            <div class="footer-tagline" data-animate data-delay="2">IT Professional &amp; Innovator</div>
+            <div class="footer-contacts" data-animate data-delay="3">
                 <span class="footer-contact-item">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -2201,8 +2137,9 @@
                     Carmen, Davao del Norte
                 </span>
             </div>
-            <div class="footer-divider"></div>
-            <p class="footer-copy">© 2026 Guendhelyn Faith S. Avenido · All rights reserved</p>
+            <div class="footer-divider" data-animate data-delay="4"></div>
+            <p class="footer-copy" data-animate data-delay="5">© 2026 Guendhelyn Faith S. Avenido · All rights reserved
+            </p>
         </div>
     </footer>
 
@@ -2239,7 +2176,7 @@
                     /* Don't unobserve so delays stay reliable */
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -55px 0px' });
+        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
         document.querySelectorAll('[data-animate]').forEach(el => revealObs.observe(el));
 
@@ -2253,15 +2190,6 @@
         const timeline = document.getElementById('timeline');
         if (timeline) timelineObs.observe(timeline);
 
-        /* ── Footer animation (no rootMargin so it fires at the very bottom) ── */
-        const footerObs = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('footer-visible');
-            });
-        }, { threshold: 0.05 });
-
-        const mainFooter = document.getElementById('mainFooter');
-        if (mainFooter) footerObs.observe(mainFooter);
     </script>
 </body>
 
